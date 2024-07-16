@@ -881,7 +881,7 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -917,3 +917,28 @@ vim.opt.expandtab = true
 
 -- Shift + Tab to un-indent in visual mode
 vim.keymap.set('i', '<S-Tab>', '<C-d>', { desc = 'Un-indent with Shift+Tab in insert mode' })
+
+-- Move cursor left in insert mode
+vim.keymap.set('i', '<C-b>', '<Left>', { desc = 'Move cursor left' })
+
+-- Move cursor right in insert mode
+vim.keymap.set('i', '<C-f>', '<Right>', { desc = 'Move cursor right' })
+
+-- Move cursor up in insert mode
+vim.keymap.set('i', '<C-p>', '<Up>', { desc = 'Move cursor up' })
+
+-- Move cursor down in insert mode
+vim.keymap.set('i', '<C-n>', '<Down>', { desc = 'Move cursor down' })
+
+-- Delete character to the left in insert mode
+vim.keymap.set('i', '<C-h>', '<BS>', { desc = 'Delete character to the left' })
+
+-- Delete character to the right in insert mode
+vim.keymap.set('i', '<C-d>', '<Del>', { desc = 'Delete character to the right' })
+
+-- Enable auto-indentation
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+
+-- Lauch neo-tree --
+vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')
