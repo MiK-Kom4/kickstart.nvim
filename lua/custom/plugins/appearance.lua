@@ -46,10 +46,10 @@ return {
           },
         },
         indent = {
-          enable = false,
+          enable = true,
           chars = { '│', '¦', '┆', '┊' },
           style = {
-            { fg = '#E6DB74', bg = 'NONE' },
+            { fg = '#B0B0B0', bg = 'NONE' },
           },
         },
         line_num = {
