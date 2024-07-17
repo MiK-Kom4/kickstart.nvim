@@ -938,7 +938,7 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 
 -- Lauch neo-tree --
-vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- Set tab width to 4 spaces --
 vim.api.nvim_create_autocmd('FileType', {
