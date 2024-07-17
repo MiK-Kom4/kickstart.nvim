@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -751,11 +751,7 @@ require('lazy').setup({
               luasnip.expand_or_jump()
             end
           end, { 'i', 's' }),
-          ['<C-h>'] = cmp.mapping(function()
-            if luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            end
-          end, { 'i', 's' }),
+          ['<C-h>'] = nil,
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -910,11 +906,6 @@ require('lazy').setup({
 -- custome settings --
 vim.keymap.set('i', 'jj', '<ESC>', { silent = true })
 
--- タブのインデント幅を4にする --
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
 -- Shift + Tab to un-indent in visual mode
 vim.keymap.set('i', '<S-Tab>', '<C-d>', { desc = 'Un-indent with Shift+Tab in insert mode' })
 
@@ -942,3 +933,14 @@ vim.opt.smartindent = true
 
 -- Lauch neo-tree --
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')
+
+-- タブのインデント幅を4にする --
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.expandtab = true
+  end,
+})
