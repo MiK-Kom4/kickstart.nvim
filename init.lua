@@ -927,6 +927,12 @@ vim.keymap.set('i', '<C-h>', '<BS>', { desc = 'Delete character to the left' })
 -- Delete character to the right in insert mode
 vim.keymap.set('i', '<C-d>', '<Del>', { desc = 'Delete character to the right' })
 
+-- Set <C-a> to move to the beginning of the line in insert mode
+vim.keymap.set('i', '<C-a>', '<Home>', { desc = 'Move to the beginning of the line', silent = true })
+
+-- Set <C-e> to move to the end of the line in insert mode
+vim.keymap.set('i', '<C-e>', '<End>', { desc = 'Move to the end of the line', silent = true })
+
 -- Enable auto-indentation
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -934,7 +940,7 @@ vim.opt.smartindent = true
 -- Lauch neo-tree --
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')
 
--- タブのインデント幅を4にする --
+-- Set tab width to 4 spaces --
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
   callback = function()
