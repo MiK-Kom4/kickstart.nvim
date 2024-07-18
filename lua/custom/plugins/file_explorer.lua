@@ -35,7 +35,7 @@ return {
         },
         filters = {
           dotfiles = false, -- ドットファイルを表示
-          custom = { '.git', 'node_modules', '.cache' }, -- 特定のファイル/フォルダを非表示
+          custom = { 'node_modules', '.cache' }, -- 特定のファイル/フォルダを非表示
         },
       }
     end,
