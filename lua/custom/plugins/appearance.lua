@@ -91,7 +91,7 @@ return {
       'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     },
     init = function()
-      vim.g.barbar_auto_setup = false
+      vim.g.barbar_auto_setup = true
     end,
     opts = {
       -- オプションをここに追加します。何も指定しない場合、デフォルトが使用されます。
