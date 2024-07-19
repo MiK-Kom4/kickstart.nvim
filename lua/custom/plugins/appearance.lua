@@ -150,4 +150,10 @@ return {
       map('n', '<leader>ta', [[<CMD>lua require('close_buffers').delete({type = 'other'})<CR>]], opts)
     end,
   },
+  {
+    'karb94/neoscroll.nvim',
+    config = function()
+      require('neoscroll').setup {}
+    end,
+  },
 }
