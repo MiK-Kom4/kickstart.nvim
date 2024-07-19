@@ -136,4 +136,18 @@ return {
       map('n', '<A-n>', '<Cmd>enew<CR>', opts)
     end,
   },
+  {
+    'kazhala/close-buffers.nvim',
+    config = function()
+      require('close_buffers').setup {
+        preserve_window_layout = { 'this' },
+      }
+
+      local map = vim.api.nvim_set_keymap
+      local opts = { noremap = true, silent = true }
+
+      map('n', '<leader>tc', [[<CMD>lua require('close_buffers').delete({type = 'this'})<CR>]], opts)
+      map('n', '<leader>ta', [[<CMD>lua require('close_buffers').delete({type = 'other'})<CR>]], opts)
+    end,
+  },
 }
