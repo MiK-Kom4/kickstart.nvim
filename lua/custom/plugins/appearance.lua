@@ -23,7 +23,19 @@ return {
         inactive_sections = {
           lualine_a = {},
           lualine_b = {},
-          lualine_c = { 'filename' },
+          lualine_c = {
+            'filename',
+            {
+              function()
+                local venv = os.getenv 'VIRTUAL_ENV'
+                if venv then
+                  return ' ' .. vim.fn.fnamemodify(venv, ':t')
+                end
+                return ' system'
+              end,
+              color = { fg = '#ff9e64' },
+            },
+          },
           lualine_x = { 'location' },
           lualine_y = {},
           lualine_z = {},
