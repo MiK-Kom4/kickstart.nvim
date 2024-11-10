@@ -4,7 +4,7 @@ return {
     version = '*',
     config = function()
       require('toggleterm').setup {
-        open_mapping = [[<leader>@]],
+        open_mapping = [[\\]],
       }
 
       -- Terminalとエディター間でフォーカスを切り替えるためのキーマッピング

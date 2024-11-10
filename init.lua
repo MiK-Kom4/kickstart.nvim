@@ -87,8 +87,8 @@ P.S. You can delete this when you're done too. It's your config now! :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = [[<RightShift>]]
+vim.g.maplocalleader = [[<RightShift>]]
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
@@ -939,6 +939,8 @@ vim.opt.smartindent = true
 
 -- Lauch neo-tree --
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+
+vim.keymap.set('', '<RightShift>', '<Nop>', { silent = true })
 
 -- Set tab width to 4 spaces --
 vim.api.nvim_create_autocmd('FileType', {
